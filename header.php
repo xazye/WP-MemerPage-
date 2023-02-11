@@ -6,37 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
     wp_head();
+    if (function_exists('the_custom_logo')) {
+        $custom_logo_id = get_theme_mod('custom_logo');
+        $logo = wp_get_attachment_image_src($custom_logo_id);
+    }
     ?>
 </head>
 
-<body>
-    <header class="min-h-20  bg-purple text-center text-hwite  group">
-        <button type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-hamburger" aria-expanded="false">
-        </button>
-        <div class=" w-full  gmd:block h-20 flex items-center justify-around px-6 ">
-            <?php
-            if (function_exists('the_custom_logo')) {
-                $custom_logo_id = get_theme_mod('custom_logo');
-                $logo = wp_get_attachment_image_src($custom_logo_id);
-            }
-            ?>
-            <a href="/"><img src="<?php echo $logo[0] ?>" class="h-14 rounded-full" alt=""></a>
+<body class="min-w-[260]">
+    <header class="min-h-20  bg-purple text-hwite flex flex-col md:flex-row items-center justify-between px-3 border-b">
+        <a href="/"><img src="<?php echo $logo[0] ?>" class="max-h-[120] rounded-full" alt=""></a>
+
+        <div id="menu-links" class="hidden  grid-cols-1 grid-rows-[auto,1fr]  px-6 text-center md:flex md:justify-between md:w-full ">
 
             <?php
             wp_nav_menu(array(
                 'menu' => 'primary',
-                'menu_class' => "flex items-center justify-between grow px-10",
-                'container' => "",
+                'menu_class' => "flex items-center justify-between",
                 'theme_locatione' => 'primary'
             ))
             ?>
 
+            <div class="rows-start-2 py-3">
+                <?php
+                get_search_form();
+                ?>
+            </div>
         </div>
-        <div class="p-5 ">
-            <?php
-            get_search_form();
-            ?>
-        </div>
+        <i class="fa-solid fa-bars fa-2xl flex items-center h-12 mt-3 md:hidden" onclick="showmenu()">
+        </i>
+
+
 
     </header>
     <main class=" bg-purple  text-hwite overflow-hidden min-h-screen ">

@@ -15,6 +15,18 @@ function phpayyyoooo_menus()
     register_nav_menus($locations);
 }
 
+function phpayyyooo_widget_areas()
+{
+    register_sidebar(array(
+        'name'          => 'Footer sidebar',
+        'id'            => 'footer_1',
+        'before_widget' => '<div >',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2>',
+        'after_title'   => '</h2>',
+    ));
+}
+
 
 function phpayyyooo_register_styles()
 {
@@ -37,4 +49,5 @@ add_action('after_setup_theme', 'phpayyyooo_theme_suppport');
 add_action('init', 'phpayyyoooo_menus');
 add_action('wp_enqueue_scripts', 'phpayyyooo_register_styles');
 add_action('wp_enqueue_scripts', 'phpayyyooo_register_scripts');
+add_action('widgets_init', 'phpayyyooo_widget_areas');
 add_filter('excerpt_length', 'phpayyyooo_custom_excerpt_length', 999);
