@@ -14,29 +14,58 @@
 </head>
 
 <body class="min-w-[260]">
-    <header class="min-h-20  bg-purple text-hwite flex flex-col md:flex-row items-center justify-between px-3 border-b">
-        <a href="/"><img src="<?php echo $logo[0] ?>" class="max-h-[120] rounded-full" alt=""></a>
+    <!-- The Modal -->
+    <div id="myModal" class="hidden fixed z-10 w-full h-full overflow-auto bg-bblack bg-opacity-95">
+        <!-- Modal content -->
+        <div class="my-3 mx-auto px-5 flex flex-row  items-center">
+            <i onclick="(function closeModal(){document.getElementById('myModal').style.display = 'none'})()" class="fa-solid fa-arrow-left text-2xl pr-4 text-secondary close"></i>
+            <i class="fa-solid fa-magnifying-glass absolute left-16 top-5"></i>
 
-        <div id="menu-links" class="hidden  grid-cols-1 grid-rows-[auto,1fr]  px-6 text-center md:flex md:justify-between md:w-full ">
-
-            <?php
-            wp_nav_menu(array(
-                'menu' => 'primary',
-                'menu_class' => "flex items-center justify-between",
-                'theme_locatione' => 'primary'
-            ))
-            ?>
-
-            <div class="rows-start-2 py-3">
+            <div class="grow">
+                <!-- add dynamic searching w/ js prolly use get_search_query   or fetch-->
                 <?php
                 get_search_form();
                 ?>
             </div>
+
         </div>
-        <i class="fa-solid fa-bars fa-2xl flex items-center h-12 mt-3 md:hidden" onclick="showmenu()">
-        </i>
+
+    </div>
+    <header class="min-h-20  bg-bblack text-hwite border-b">
+        <div class="flex  md:flex-row items-center justify-between px-3 ">
+            <!-- Menu Trigger -->
+
+            <i id="openbtn" class="fa-solid fa-bars fa-2xl flex items-center h-12 md:hidden" onclick="(function openNav(){document.getElementById('mySidebar').style.width='250px' ;})()">
+            </i>
+
+            <!-- logo -->
+            <a href="/"><img width="60px" class="rounded-full" src="<?php echo esc_url(wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full')[0]); ?>" /></a>
+
+            <!-- Modal Trigger-->
+            <i id="myBtn" onclick="(function openModal()
+            {document.getElementById('myModal').style.display='block'})()" class="fa-solid fa-magnifying-glass md:hidden"></i>
+
+            <!-- Menu content -->
+            <div id="mySidebar" class="sidebar">
+                <p>Popular tags</p>
+
+                <?php
+                wp_tag_cloud(array("number" => "10", "orderby" => 'count', "order" => "DESC"));        ?>
 
 
+            </div>
+        </div>
+        <ul class="flex flex-row justify-between">
+            <?php
+            wp_nav_menu(array(
+                'menu' => 'primary',
+                'menu_class' => "",
+                "container" => false,
+                'items_wrap' => '%3$s',
+                'theme_location' => 'primary'
+            ))
+            ?>
+        </ul>
 
     </header>
-    <main class=" bg-purple  text-hwite overflow-hidden min-h-screen ">
+    <main class=" bg-bblack text-hwite overflow-hidden min-h-screen ">

@@ -51,3 +51,4 @@ add_action('wp_enqueue_scripts', 'phpayyyooo_register_styles');
 add_action('wp_enqueue_scripts', 'phpayyyooo_register_scripts');
 add_action('widgets_init', 'phpayyyooo_widget_areas');
 add_filter('excerpt_length', 'phpayyyooo_custom_excerpt_length', 999);
+add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption'));

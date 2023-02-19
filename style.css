@@ -522,6 +522,44 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -530,32 +568,20 @@ video {
   position: relative;
 }
 
+.left-16 {
+  left: 4rem;
+}
+
+.top-5 {
+  top: 1.25rem;
+}
+
 .left-1\/2 {
   left: 50%;
 }
 
-.col-start-2 {
-  grid-column-start: 2;
-}
-
-.row-start-2 {
-  grid-row-start: 2;
-}
-
-.row-start-3 {
-  grid-row-start: 3;
-}
-
-.row-end-2 {
-  grid-row-end: 2;
-}
-
-.row-end-3 {
-  grid-row-end: 3;
-}
-
-.m-3 {
-  margin: 0.75rem;
+.z-10 {
+  z-index: 10;
 }
 
 .mx-auto {
@@ -568,35 +594,26 @@ video {
   margin-right: 1.5rem;
 }
 
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-}
-
-.mx-3 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-}
-
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 
 .mt-6 {
   margin-top: 1.5rem;
 }
 
-.mt-5 {
-  margin-top: 1.25rem;
+.mr-2 {
+  margin-right: 0.5rem;
 }
 
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
-.inline-block {
-  display: inline-block;
+.block {
+  display: block;
 }
 
 .flex {
@@ -607,36 +624,32 @@ video {
   display: none;
 }
 
-.h-screen {
-  height: 100vh;
+.h-full {
+  height: 100%;
 }
 
 .h-12 {
   height: 3rem;
 }
 
-.max-h-\[150\] {
-  max-height: 150;
-}
-
-.max-h-\[120\] {
-  max-height: 120;
-}
-
-.max-h-\[480\] {
-  max-height: 480;
+.h-screen {
+  height: 100vh;
 }
 
 .min-h-screen {
   min-height: 100vh;
 }
 
-.w-\[40\%\] {
-  width: 40%;
+.w-full {
+  width: 100%;
 }
 
-.w-screen {
-  width: 100vw;
+.w-\[100\%\] {
+  width: 100%;
+}
+
+.w-\[40\%\] {
+  width: 40%;
 }
 
 .min-w-\[260\] {
@@ -647,8 +660,8 @@ video {
   max-width: 1100px;
 }
 
-.max-w-\[150\] {
-  max-width: 150;
+.grow {
+  flex-grow: 1;
 }
 
 .-translate-x-1\/2 {
@@ -664,56 +677,44 @@ video {
   grid-template-rows: auto 1fr;
 }
 
-.flex-col {
-  flex-direction: column;
+.flex-row {
+  flex-direction: row;
 }
 
 .items-center {
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .justify-between {
   justify-content: space-between;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-hidden {
   overflow: hidden;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
 
-.rounded-t-lg {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-}
-
-.rounded-b-lg {
-  border-bottom-right-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-}
-
-.border-b {
-  border-bottom-width: 1px;
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .border-t {
   border-top-width: 1px;
 }
 
-.bg-secondary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 130 126 / var(--tw-bg-opacity));
-}
-
-.bg-tertiary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(128 152 199 / var(--tw-bg-opacity));
+.border-b {
+  border-bottom-width: 1px;
 }
 
 .bg-bblack {
@@ -721,14 +722,13 @@ video {
   background-color: rgb(24 26 27 / var(--tw-bg-opacity));
 }
 
-.bg-purple {
+.bg-secondary {
   --tw-bg-opacity: 1;
-  background-color: rgb(58 54 122 / var(--tw-bg-opacity));
+  background-color: rgb(15 130 126 / var(--tw-bg-opacity));
 }
 
-.object-none {
-  -o-object-fit: none;
-     object-fit: none;
+.bg-opacity-95 {
+  --tw-bg-opacity: 0.95;
 }
 
 .p-6 {
@@ -744,19 +744,38 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
 
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
 }
 
 .text-left {
@@ -786,16 +805,16 @@ video {
   font-weight: 800;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
 .font-bold {
   font-weight: 700;
 }
 
 .leading-7 {
   line-height: 1.75rem;
-}
-
-.tracking-\[2px\] {
-  letter-spacing: 2px;
 }
 
 .text-secondary {
@@ -808,19 +827,68 @@ video {
   color: rgb(128 152 199 / var(--tw-text-opacity));
 }
 
-.text-muted {
-  color: rgba(232, 230, 227, 0.6);
-}
-
 .text-hwite {
   --tw-text-opacity: 1;
   color: rgb(232 230 227 / var(--tw-text-opacity));
+}
+
+.text-bblack {
+  --tw-text-opacity: 1;
+  color: rgb(24 26 27 / var(--tw-text-opacity));
 }
 
 @media only screen and ( width >= 768px) {
   .page-numbers {
     padding: 1.5rem !important;
   }
+}
+
+.single-post {
+  position: relative;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 26 27 / var(--tw-bg-opacity));
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .single-post {
+    display: flex;
+  }
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.post-tags>a {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 130 126 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  color: rgba(232, 230, 227, 0.6);
+}
+
+.post-action>a {
+  display: flex;
+  width: 33.333333%;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: rgba(232, 230, 227, 0.6);
 }
 
 #comments{
@@ -859,36 +927,97 @@ a.page-numbers:hover {
   background-color: #0F827E;
 }
 
-.searchform input[type=text]{
-  border-radius: 0.5rem;
-  padding: 0.25rem 1rem;
-  color:#181a1b ;
+.search-form {
+  margin: 0;
 }
 
-.searchform input::-moz-placeholder{
+.search-form input::-moz-placeholder{
   color: #0F827E;
 }
 
-.searchform input::placeholder{
+.search-form input::placeholder{
   color: #0F827E;
 }
 
-.searchform input[type=submit] {
-  background-color: #8098C7;
-  padding: 0.25rem 1rem;
+.search-form input[type=submit]:hover {
   border-radius: 0.5rem;
+  color: #8098C7;
 }
 
-.searchform input[type=submit]:hover {
-  background-color: #0F827E;
-  color: #181a1b;
+.close:hover,
+.close:focus {
+  color: black;
+  cursor: pointer;
+}
+
+/* header sdidebar */
+
+/* The sidebar menu */
+
+.sidebar {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111;
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
 }
 
 @media (min-width: 768px) {
-  .md\:mr-6 {
-    margin-right: 1.5rem;
-  }
-
   .md\:flex {
     display: flex;
   }
@@ -897,20 +1026,8 @@ a.page-numbers:hover {
     display: none;
   }
 
-  .md\:max-h-\[250\] {
-    max-height: 250;
-  }
-
   .md\:w-full {
     width: 100%;
-  }
-
-  .md\:max-w-\[250\] {
-    max-width: 250;
-  }
-
-  .md\:grow {
-    flex-grow: 1;
   }
 
   .md\:flex-row {
@@ -921,3 +1038,4 @@ a.page-numbers:hover {
     justify-content: space-between;
   }
 }
+

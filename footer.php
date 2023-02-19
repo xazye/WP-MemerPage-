@@ -1,6 +1,6 @@
 <?php wp_footer() ?>
 </main>
-<footer class="relative bg-purple border-t  text-hwite">
+<footer class="relative bg-bblack border-t  text-hwite">
     <div class="mx-6 flex items-center justify-between min-h-32">
         <p class="py-6">Foota</p>
         <p class="py-6">second</p>
